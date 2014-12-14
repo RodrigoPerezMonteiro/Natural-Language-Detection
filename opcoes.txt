@@ -1,0 +1,56 @@
+Grupo 11:
+
+Rodrigo Monteiro - 73701
+Guilherme Ferreira - 69316
+
+As tarefas efectuadas serão descritas abaixo pela ordem de execução. 
+Ordem essa sugerida no enunciado do projecto.
+
+1.a) Optámos por escolher as seguintes línguas: 
+-Português (corpus fornecido pelo corpo docente),
+-Inglês, 
+-Alemão, 
+-Italiano,
+-Francês.
+
+As frases que compõem o corpus de cada uma dessas línguas foram recolhidas através 
+da internet, nomeadamente em páginas de jornais e e-books gratuitos.
+
+De forma a testar o sistema, utilizando as boas práticas recomendadas nas aulas teóricas,
+bem como na bibliografia da cadeira, implementámos a metodologia N-Fold (neste caso 10-Fold).
+Método esse que consiste em separar do corpus original 10% para testes ao sistema e os restantes 
+90% para treino (o corpus original antes desta divisão está na directoria corpora/full_corpora.).
+
+1.b) Optámos por utilizar os comandos disponibilizados pela shell do UNIX, principalmente 
+os comandos sed e tr. Dessa forma convertemos as letras maiúsculas para minúsculas e removemos 
+a maioria dos caracteres não ASCII na tentativa de facilitar as contagens dos bigramas e trigramas.
+Os corpora normalizados são guardados na directoria /corpora/normalized.
+
+2. Uma vez que a normalização aplicada aos corpora difere da utilizada na normalização do corpus Português 
+fornecido no material de apoio, decidimos refazer a normalização do mesmo e as respectivas contagens.
+As contagens de bigramas e trigramas são feitas pelo programa principal (escrito por nós na linguagem C).
+Os respectivos ficheiros gerados pelo executável são guardados na directoria /corpora/counts.
+
+3. O nosso programa principal (/source/mp2.exe) que gerou as contagens mencionadas acima, faz uso das
+mesmas para determinar a probabilidade da ocorrência de bigramas e trigramas numa dada língua.
+Posteriormente utiliza esses cálculos para estimar qual a língua mais provável na qual a frase de input/teste
+está escrita. Os ficheiros com os cálculos probabilísticos são guardados em /corpora/probs.
+O programa recebe o input em forma de ficheiro de texto, que é passado como argumento na execução do programa,
+no seguinte formato: ./mp2 input.txt output.txt (flags - opcional), onde input e output são, respectivamente,
+o ficheiro cujo idioma se pretende determinar e o ficheiro onde são escritos os resultados desse teste.
+Os resultados dos testes são guardados na directoria /results e subdirectorias com o nome da língua da frase
+de teste. As flags mencionadas acima são '--debug', '--files', '--nosmooth' e '--clean', cuja função é, respectivamente,
+mostrar o estado do programa em execução, gerar ficheiros de teste - gera apenas ficheiros iguais aos do input
+(esta opção foi criada para, numa fase inicial, testar o input/output em ficheiros do programa), utilizar o programa
+sem alisamento das probabilidades (smoothing) e limpar o directório da trabalho (removendo as pastas criadas durante a sua execução).
+
+4.a) Após aplicar o alisamento de Laplace (Add-1 smoothing), fazemos novo cálculo das probabilidades de bigramas
+e trigramas para cada língua, guardando o resultado desse cálculo na directoria /corpora/probs/smoothed.
+
+#################################################################################################################
+
+O programa deve ser executado utilizando o comando ./run.sh na directoria principal do projeto ou, manualmente,
+utilizando o formato mencionado em 3., indicando o ficheiro de input (a testar) e output (onde pretende que seja
+guardado o resultado do teste).
+
+Para utilizar o programa sem alisamento deve ser usada a flag '--nosmooth' ( exemplo: ./mp2 input.txt output.txt --nosmooth )

@@ -1,0 +1,22 @@
+Grupo 11:
+
+Rodrigo Monteiro - 73701
+Guilherme Ferreira - 69316
+
+Uma vez que os corpora têm um número bastante reduzido de frases (e, por consequência, de bigramas e trigramas)
+é bastante difícil estimar com uma grande precisão a que língua correspondem as frases utilizadas para testes,
+visto que há bastantes bigramas e trigramas no léxico da língua que o programa nunca "viu" antes. Para além disso,
+algumas das línguas utilizadas por nós são bastante semelhantes (por exemplo Português e Italiano são línguas 
+com a mesma origem, bem como o Inglês e Alemão). Como a nossa normalização dos corpora utiliza espaços para separar
+as marcas de pontuação, isso também teve alguma influência nas contagens de n-gramas e terá alterado a precisão
+do programa.
+
+De qualquer forma, nos 50 testes que efectuámos, obtivemos resultados satisfatórios (46 acertos = 92%), no entanto,
+não podemos extrapolar esses resultados para outros contextos, uma vez que o número de testes realizados não é suficientemente
+abrangente (ainda assim achámos que não valia a pena realizar mais do que este número de testes, pois as frases utilizadas
+correspondem a 10% dos nossos corpora).
+
+Concluímos que é viável criar programas que detectam a língua correcta de um determinado texto, no entanto as técnicas que 
+foram utilizadas no decorrer deste projecto são um pouco limitativas nesse aspecto e seria preferível utilizar contagens de 
+palavras (por ex.) e outras abordagens/técnicas de alisamento.
+

@@ -1,0 +1,9 @@
+Língua		Acertos / Número Testes 
+
+Português 		9/10
+Alemão			10/10
+Francês			8/10
+Italiano		9/10
+Inglês			10/10
+
+Total:			46/50 = 92% acertos
